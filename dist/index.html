@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EchoPlex Whitepaper — A Connected Digital Entertainment Ecosystem. Version 1.0" />
+  <title>EchoPlex Whitepaper — A Connected Digital Ecosystem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="./assets/index-Usu96NWO.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CfgywxIX.css">
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Top Navigation -->
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <div class="nav-brand">
+        <div class="nav-brand-mark">E</div>
+        <span class="nav-brand-text">EchoPlex</span>
+        <span class="nav-brand-sep">/</span>
+        <span class="nav-brand-sub">Whitepaper</span>
+      </div>
+      <div class="nav-links">
+        <a href="#abstract" class="nav-link">Abstract</a>
+        <a href="#architecture" class="nav-link">Architecture</a>
+        <a href="#roadmap" class="nav-link">Roadmap</a>
+        <a href="#conclusion" class="nav-link">Conclusion</a>
+        <span class="nav-version">v1.0</span>
+        <button class="nav-menu-toggle" id="menuToggle" aria-label="Toggle table of contents">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sidebar overlay (mobile) -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Main Layout -->
+  <div class="doc-layout">
+
+    <!-- Left Sidebar — Table of Contents -->
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-title">EchoPlex Whitepaper</div>
+        <div class="sidebar-subtitle">Version 1.0 · August 2025</div>
+      </div>
+      <nav class="toc" id="toc">
+        <div class="toc-item"><a href="#abstract" class="toc-link" data-toc>01 — Abstract</a></div>
+        <div class="toc-item"><a href="#executive-summary" class="toc-link" data-toc>02 — Executive Summary</a></div>
+        <div class="toc-item"><a href="#vision-mission" class="toc-link" data-toc>03 — Vision & Mission</a></div>
+        <div class="toc-item"><a href="#the-problem" class="toc-link" data-toc>04 — The Problem</a></div>
+        <div class="toc-item"><a href="#why-platforms-fall-short" class="toc-link" data-toc>05 — Why Existing Platforms Fall Short</a></div>
+        <div class="toc-item"><a href="#the-solution" class="toc-link" data-toc>06 — The Solution</a></div>
+        <div class="toc-item"><a href="#ecosystem" class="toc-link" data-toc>07 — The EchoPlex Ecosystem</a></div>
+        <div class="toc-item"><a href="#game-hub" class="toc-link" data-toc>08 — Game Hub</a></div>
+        <div class="toc-item"><a href="#creator-hub" class="toc-link" data-toc>09 — Creator Hub</a></div>
+        <div class="toc-item"><a href="#story-hub" class="toc-link" data-toc>10 — Story Hub</a></div>
+        <div class="toc-item"><a href="#marketplace" class="toc-link" data-toc>11 — Marketplace</a></div>
+        <div class="toc-item"><a href="#communities" class="toc-link" data-toc>12 — Communities</a></div>
+        <div class="toc-item"><a href="#tradefusion" class="toc-link" data-toc>13 — TradeFusion</a></div>
+        <div class="toc-item"><a href="#architecture" class="toc-link" data-toc>14 — Technical Architecture</a></div>
+        <div class="toc-item"><a href="#reputation" class="toc-link" data-toc>15 — Reputation & Progression</a></div>
+        <div class="toc-item"><a href="#rewards" class="toc-link" data-toc>16 — Rewards System</a></div>
+        <div class="toc-item"><a href="#token" class="toc-link" data-toc>17 — Future Token Framework</a></div>
+        <div class="toc-item"><a href="#business-model" class="toc-link" data-toc>18 — Business Model</a></div>
+        <div class="toc-item"><a href="#roadmap" class="toc-link" data-toc>19 — Roadmap</a></div>
+        <div class="toc-item"><a href="#risk-factors" class="toc-link" data-toc>20 — Risk Factors</a></div>
+        <div class="toc-item"><a href="#team-vision" class="toc-link" data-toc>21 — Team & Vision</a></div>
+        <div class="toc-item"><a href="#conclusion" class="toc-link" data-toc>22 — Conclusion</a></div>
+      </nav>
+    </aside>
+
+    <!-- Center — Article Content -->
+    <main class="doc-content" id="content">
+
+      <!-- Document Hero -->
+      <header class="doc-hero">
+        <div class="doc-hero-eyebrow">Technical Whitepaper</div>
+        <h1 class="doc-hero-title">EchoPlex</h1>
+        <p class="doc-hero-subtitle">
+          A unified digital entertainment ecosystem connecting creators, gamers, storytellers,
+          communities, and digital commerce into one connected platform.
+        </p>
+        <div class="doc-meta">
+          <div class="doc-meta-item"><strong>Version</strong> 1.0</div>
+          <div class="doc-meta-item"><strong>Date</strong> August 2025</div>
+          <div class="doc-meta-item"><strong>Status</strong> Draft</div>
+          <div class="doc-meta-item"><strong>Authors</strong> EchoPlex Team</div>
+        </div>
+      </header>
+
+      <!-- Section 01 — Abstract -->
+      <section class="doc-section" id="abstract">
+        <span class="section-number">01</span>
+        <h2 class="section-heading">
+          Abstract
+          <button class="anchor-btn" data-anchor="abstract" aria-label="Copy link to this section">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          EchoPlex is a unified digital entertainment ecosystem that addresses the fundamental
+          fragmentation of online experiences. Today, users maintain separate identities, separate
+          communities, and separate creative portfolios across dozens of disconnected platforms.
+          EchoPlex proposes a single persistent identity that grows with every action — across games,
+          creations, stories, communities, and commerce — where every contribution strengthens the whole.
+        </p>
+        <p>
+          This whitepaper outlines the architectural foundation, product ecosystem, reputation system,
+          reward mechanisms, and phased roadmap for building EchoPlex into a self-sustaining digital
+          economy. The design philosophy is simple: <strong>entertainment first, ownership second,
+          rewards third.</strong>
+        </p>
+        <div class="callout callout-info">
+          <div class="callout-title">Note</div>
+          <div class="callout-body">
+            <p>This document is a living whitepaper. It will be updated as the ecosystem evolves,
+            components are built, and community feedback is incorporated.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 02 — Executive Summary -->
+      <section class="doc-section" id="executive-summary">
+        <span class="section-number">02</span>
+        <h2 class="section-heading">
+          Executive Summary
+          <button class="anchor-btn" data-anchor="executive-summary" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          The digital entertainment landscape has never been richer — yet it has never been more
+          fragmented. Users switch between gaming platforms, social networks, marketplaces, content
+          studios, and financial tools, with no shared identity or portable reputation between them.
+        </p>
+        <p>
+          EchoPlex addresses this by providing six interconnected products under one identity layer:
+        </p>
+        <ul>
+          <li><strong>Game Hub</strong> — play, compete, and progress</li>
+          <li><strong>Creator Hub</strong> — build, publish, and monetize</li>
+          <li><strong>Story Hub</strong> — transform storytelling into living worlds</li>
+          <li><strong>Marketplace</strong> — trade and collect digital assets</li>
+          <li><strong>Communities</strong> — spaces for belonging and mentorship</li>
+          <li><strong>TradeFusion</strong> — the financial layer</li>
+        </ul>
+        <p>
+          The ecosystem is designed so that each product strengthens every other. Creators produce
+          content that players experience; players form communities that drive commerce; commerce
+          funds further creation. This is the EchoPlex flywheel.
+        </p>
+        <div class="diagram">
+          <div class="diagram-number">1</div>
+          <div class="diagram-title">The EchoPlex Flywheel</div>
+          <div class="diagram-placeholder">[ Diagram: Circular flow showing how each product feeds the next ]</div>
+          <div class="diagram-caption">Figure 1 — The self-reinforcing ecosystem loop</div>
+        </div>
+      </section>
+
+      <!-- Section 03 — Vision & Mission -->
+      <section class="doc-section" id="vision-mission">
+        <span class="section-number">03</span>
+        <h2 class="section-heading">
+          Vision &amp; Mission
+          <button class="anchor-btn" data-anchor="vision-mission" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <blockquote>
+          <p>"The future of digital entertainment deserves to be connected — not through forced
+          consolidation, but through a shared identity that makes every experience more meaningful."</p>
+          <footer>— EchoPlex Founding Principle</footer>
+        </blockquote>
+        <h3>Vision</h3>
+        <p>
+          To create a digital world where identity, creativity, and community are unified — where every
+          person's digital journey is continuous, recognized, and rewarded.
+        </p>
+        <h3>Mission</h3>
+        <p>
+          To build six products that are each genuinely enjoyable on their own, but together form a
+          living ecosystem where every action contributes to a persistent, growing identity.
+        </p>
+      </section>
+
+      <!-- Section 04 — The Problem -->
+      <section class="doc-section" id="the-problem">
+        <span class="section-number">04</span>
+        <h2 class="section-heading">
+          The Problem
+          <button class="anchor-btn" data-anchor="the-problem" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          The digital world is more connected than ever — yet more fragmented than ever. Four structural
+          problems define the current landscape:
+        </p>
+        <h3>Fragmented Identity</h3>
+        <p>
+          A gamer builds achievements on one platform, an artist builds a portfolio on another, a writer
+          publishes somewhere else. Every platform stores a different version of who they are.
+        </p>
+        <h3>Scattered Communities</h3>
+        <p>
+          A player discusses a game on one app, buys items elsewhere, watches tutorials on another,
+          shares achievements on social media. Every activity requires switching between services.
+        </p>
+        <h3>Creators Remain Dependent</h3>
+        <p>
+          Creators spend years building audiences they don't own. Platform changes to algorithms,
+          policies, or revenue sharing can impact visibility and income without warning.
+        </p>
+        <h3>The Missing Piece</h3>
+        <p>
+          Each platform solves a specific problem well. Yet none connects these experiences into one
+          cohesive ecosystem where identity, creativity, and community reinforce one another.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Problem</th><th>Current State</th><th>Impact</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Fragmented Identity</td><td>Dozens of disconnected profiles</td><td>No portable reputation</td></tr>
+              <tr><td>Scattered Communities</td><td>Conversations spread across apps</td><td>No shared context</td></tr>
+              <tr><td>Creator Dependency</td><td>Audiences owned by platforms</td><td>Income instability</td></tr>
+              <tr><td>No Ecosystem</td><td>Products exist in silos</td><td>Value doesn't compound</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 05 — Why Existing Platforms Fall Short -->
+      <section class="doc-section" id="why-platforms-fall-short">
+        <span class="section-number">05</span>
+        <h2 class="section-heading">
+          Why Existing Platforms Fall Short
+          <button class="anchor-btn" data-anchor="why-platforms-fall-short" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          Existing platforms fall into three categories, each with inherent limitations that prevent them
+          from solving the fragmentation problem.
+        </p>
+        <h3>Single-Purpose Platforms</h3>
+        <p>
+          Gaming networks, social media, and marketplaces each excel at one thing. But they don't connect
+          to each other, and they don't share identity or reputation.
+        </p>
+        <h3>Web3 Platforms</h3>
+        <p>
+          Many blockchain-based platforms emphasize ownership and tokens but neglect the actual user
+          experience. The technology is visible when it should be invisible.
+        </p>
+        <h3>Super Apps</h3>
+        <p>
+          Some platforms attempt to bundle many services, but they remain closed ecosystems where the
+          platform owns the relationship with the user — not the other way around.
+        </p>
+        <div class="callout callout-warning">
+          <div class="callout-title">Key Insight</div>
+          <div class="callout-body">
+            <p>No existing platform combines genuine entertainment quality with portable identity,
+            community-driven reputation, and ecosystem-level rewards. This is the gap EchoPlex fills.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 06 — The Solution -->
+      <section class="doc-section" id="the-solution">
+        <span class="section-number">06</span>
+        <h2 class="section-heading">
+          The Solution
+          <button class="anchor-btn" data-anchor="the-solution" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          EchoPlex is built on four core principles that differentiate it from every existing platform:
+        </p>
+        <h3>One Identity</h3>
+        <p>
+          A single persistent profile that grows with every action — across games, creations, stories,
+          communities, and commerce. Your reputation is yours, and it travels with you.
+        </p>
+        <h3>Living Ecosystem</h3>
+        <p>
+          Every product benefits from every other. Creators produce, players experience, communities
+          discuss, marketplaces distribute. The value of each action compounds across the ecosystem.
+        </p>
+        <h3>Contribution Over Popularity</h3>
+        <p>
+          Reputation is earned through consistency, quality, and trust — not purchased. Every meaningful
+          contribution is recognized and recorded.
+        </p>
+        <h3>Blockchain as Infrastructure</h3>
+        <p>
+          Technology adapts to people, not the other way around. Blockchain operates behind the scenes —
+          invisible until it adds value.
+        </p>
+        <div class="diagram">
+          <div class="diagram-number">2</div>
+          <div class="diagram-title">Four-Pillar Solution Architecture</div>
+          <div class="diagram-placeholder">[ Diagram: Four pillars — Identity, Ecosystem, Reputation, Infrastructure ]</div>
+          <div class="diagram-caption">Figure 2 — The foundational principles of EchoPlex</div>
+        </div>
+      </section>
+
+      <!-- Section 07 — The EchoPlex Ecosystem -->
+      <section class="doc-section" id="ecosystem">
+        <span class="section-number">07</span>
+        <h2 class="section-heading">
+          The EchoPlex Ecosystem
+          <button class="anchor-btn" data-anchor="ecosystem" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          The EchoPlex ecosystem consists of six interconnected products, each designed to be genuinely
+          enjoyable on its own while contributing to the broader ecosystem.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Product</th><th>Role</th><th>Ecosystem Contribution</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Game Hub</td><td>Entertainment engine</td><td>Activity, achievements, identity growth</td></tr>
+              <tr><td>Creator Hub</td><td>Creative production</td><td>Content, portfolios, licensing</td></tr>
+              <tr><td>Story Hub</td><td>Interactive storytelling</td><td>Worlds, narratives, collaboration</td></tr>
+              <tr><td>Marketplace</td><td>Digital commerce</td><td>Asset distribution, royalties</td></tr>
+              <tr><td>Communities</td><td>Social fabric</td><td>Guilds, mentorship, discussion</td></tr>
+              <tr><td>TradeFusion</td><td>Financial layer</td><td>Wallet, payments, cross-chain</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Each product is described in detail in the following sections. The user journey across these
+          products is continuous — actions in one product influence identity and reputation across all
+          others.<a href="#footnote-1" class="footnote-ref" id="ref-1">1</a>
+        </p>
+      </section>
+
+      <!-- Section 08 — Game Hub -->
+      <section class="doc-section" id="game-hub">
+        <span class="section-number">08</span>
+        <h2 class="section-heading">
+          Game Hub
+          <button class="anchor-btn" data-anchor="game-hub" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          Game Hub is the entertainment engine of EchoPlex. It provides a living environment where games,
+          communities, creators, achievements, and progression naturally connect.
+        </p>
+        <h3>Core Features</h3>
+        <ul>
+          <li>Tournaments and leaderboards with seasonal rankings</li>
+          <li>Unified progression system that contributes to identity</li>
+          <li>Independent developer discovery and publishing</li>
+          <li>Seasonal events and daily missions</li>
+          <li>Achievement system with permanent identity linkage</li>
+        </ul>
+        <h3>Developer Integration</h3>
+        <p>
+          Independent game developers can publish directly to Game Hub with minimal friction. The
+          platform provides standard APIs for achievement tracking, progression sync, and identity
+          verification.
+        </p>
+        <div class="code-block">
+          <div class="code-block-header">
+            <span>achievement-api.js</span>
+            <button class="code-block-copy" data-copy>Copy</button>
+          </div>
+          <pre><code>// Register an achievement unlock with EchoPlex identity
+await echoplex.achievements.unlock({
+  gameId: "echo-quest-v1",
+  achievementId: "first-victory",
+  playerId: citizen.id,
+  metadata: {
+    score: 1250,
+    timestamp: Date.now()
+  }
+});</code></pre>
+        </div>
+      </section>
+
+      <!-- Section 09 — Creator Hub -->
+      <section class="doc-section" id="creator-hub">
+        <span class="section-number">09</span>
+        <h2 class="section-heading">
+          Creator Hub
+          <button class="anchor-btn" data-anchor="creator-hub" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          Creator Hub is a unified environment to create, publish, collaborate, monetize, and grow. Every
+          published creation becomes part of a permanent portfolio linked to the creator's identity.
+        </p>
+        <h3>Core Features</h3>
+        <ul>
+          <li>Professional creator profiles with permanent portfolios</li>
+          <li>Collaboration tools with transparent revenue sharing</li>
+          <li>Transparent licensing and ownership records</li>
+          <li>AI as a creative assistant — not a replacement</li>
+          <li>Cross-publishing to Marketplace and Story Hub</li>
+        </ul>
+        <div class="callout callout-success">
+          <div class="callout-title">Design Principle</div>
+          <div class="callout-body">
+            <p>Creators own their audience. The platform's role is to provide tools and distribution —
+            not to control the relationship between creators and their community.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 10 — Story Hub -->
+      <section class="doc-section" id="story-hub">
+        <span class="section-number">10</span>
+        <h2 class="section-heading">
+          Story Hub
+          <button class="anchor-btn" data-anchor="story-hub" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          Story Hub transforms storytelling from static content into a living ecosystem. Stories become
+          worlds. Worlds become communities. Every story is the beginning of something larger.
+        </p>
+        <h3>Core Features</h3>
+        <ul>
+          <li>Living worlds with timelines and lore</li>
+          <li>Episodic publishing with reader progression tracking</li>
+          <li>Interactive and branching narratives</li>
+          <li>Collaborative world-building with multiple authors</li>
+          <li>Reader communities built around stories and worlds</li>
+        </ul>
+        <blockquote>
+          <p>"A story is not a thing that ends. It's a world that continues to exist after the last page."</p>
+          <footer>— Story Hub Design Philosophy</footer>
+        </blockquote>
+      </section>
+
+      <!-- Section 11 — Marketplace -->
+      <section class="doc-section" id="marketplace">
+        <span class="section-number">11</span>
+        <h2 class="section-heading">
+          Marketplace
+          <button class="anchor-btn" data-anchor="marketplace" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          The Marketplace is where creativity becomes opportunity. It provides a venue for trading and
+          collecting digital assets created within the ecosystem — with transparent licensing, royalties,
+          and provenance.
+        </p>
+        <h3>Core Features</h3>
+        <ul>
+          <li>Digital asset marketplace with storefronts</li>
+          <li>Transparent licensing and automatic royalties</li>
+          <li>Provenance tracking for every asset</li>
+          <li>Creator-controlled pricing and distribution</li>
+          <li>Cross-product asset portability</li>
+        </ul>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Asset Type</th><th>Source Product</th><th>Royalty Model</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Game items</td><td>Game Hub</td><td>Developer + creator split</td></tr>
+              <tr><td>Art &amp; design</td><td>Creator Hub</td><td>Direct creator royalty</td></tr>
+              <tr><td>Story worlds</td><td>Story Hub</td><td>Author + collaborator split</td></tr>
+              <tr><td>Community assets</td><td>Communities</td><td>Community treasury</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 12 — Communities -->
+      <section class="doc-section" id="communities">
+        <span class="section-number">12</span>
+        <h2 class="section-heading">
+          Communities
+          <button class="anchor-btn" data-anchor="communities" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          Communities are the social fabric of EchoPlex. They provide spaces for belonging, learning,
+          guilds, and mentorship — all linked to the shared identity layer.
+        </p>
+        <h3>Core Features</h3>
+        <ul>
+          <li>Guilds with shared goals and group progression</li>
+          <li>Mentorship programs connecting experienced and new members</li>
+          <li>Discussion spaces organized by game, story, or creation</li>
+          <li>Community events and tournaments</li>
+          <li>Reputation contribution through community participation</li>
+        </ul>
+        <p>
+          Communities are not separate from the ecosystem — they are woven into it. A guild's collective
+          achievements contribute to individual reputation. A mentor's guidance is recognized in their
+          identity. Every community interaction has meaning.
+        </p>
+      </section>
+
+      <!-- Section 13 — TradeFusion -->
+      <section class="doc-section" id="tradefusion">
+        <span class="section-number">13</span>
+        <h2 class="section-heading">
+          TradeFusion
+          <button class="anchor-btn" data-anchor="tradefusion" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          TradeFusion is the financial layer of EchoPlex. It provides wallet functionality, asset
+          management, payments, and cross-chain support — designed to be simple, secure, and
+          ecosystem-first.
+        </p>
+        <h3>Core Features</h3>
+        <ul>
+          <li>Integrated wallet with ecosystem-wide payments</li>
+          <li>Asset management across all EchoPlex products</li>
+          <li>Cross-chain support for interoperability</li>
+          <li>Transparent transaction history</li>
+          <li>Simplified onboarding for non-technical users</li>
+        </ul>
+        <div class="callout callout-info">
+          <div class="callout-title">Design Principle</div>
+          <div class="callout-body">
+            <p>TradeFusion should feel like a normal wallet — not a crypto product. Blockchain complexity
+            is hidden behind a clean, intuitive interface.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 14 — Technical Architecture -->
+      <section class="doc-section" id="architecture">
+        <span class="section-number">14</span>
+        <h2 class="section-heading">
+          Technical Architecture
+          <button class="anchor-btn" data-anchor="architecture" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          EchoPlex is built on a layered architecture that separates user experience, identity, data, and
+          blockchain infrastructure. This separation ensures that the platform can evolve without
+          disrupting the user experience.
+        </p>
+        <h3>Architecture Layers</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Layer</th><th>Responsibility</th><th>Technology</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Experience</td><td>Product UI/UX</td><td>Web, mobile, responsive</td></tr>
+              <tr><td>Identity</td><td>Profile, reputation, auth</td><td>EchoPlex Identity Layer</td></tr>
+              <tr><td>Data</td><td>Content, assets, activity</td><td>PostgreSQL + IPFS</td></tr>
+              <tr><td>Blockchain</td><td>Ownership, provenance</td><td>EVM-compatible chain</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="diagram">
+          <div class="diagram-number">3</div>
+          <div class="diagram-title">Layered Architecture</div>
+          <div class="diagram-placeholder">[ Diagram: Four horizontal layers — Experience → Identity → Data → Blockchain ]</div>
+          <div class="diagram-caption">Figure 3 — Separation of concerns in the EchoPlex stack</div>
+        </div>
+        <h3>Identity Layer</h3>
+        <p>
+          The Identity Layer is the core of EchoPlex. It maintains a single profile per user that
+          aggregates activity, reputation, and ownership across all products. All products communicate
+          through this layer rather than directly with each other.
+        </p>
+        <div class="code-block">
+          <div class="code-block-header">
+            <span>identity-schema.json</span>
+            <button class="code-block-copy" data-copy>Copy</button>
+          </div>
+          <pre><code>{
+  "citizen": {
+    "id": "ep_0x1a2b3c...",
+    "profile": {
+      "displayName": "string",
+      "createdAt": "ISO-8601",
+      "reputationScore": "number"
+    },
+    "activity": {
+      "games": ["gameRef"],
+      "creations": ["creationRef"],
+      "stories": ["storyRef"],
+      "communities": ["communityRef"]
+    },
+    "ownership": ["assetRef"]
+  }
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- Section 15 — Reputation & Progression -->
+      <section class="doc-section" id="reputation">
+        <span class="section-number">15</span>
+        <h2 class="section-heading">
+          Reputation &amp; Progression
+          <button class="anchor-btn" data-anchor="reputation" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          Reputation in EchoPlex is earned, not purchased. It is calculated through a combination of
+          consistency, quality, and community trust — and it is visible across the entire ecosystem.
+        </p>
+        <h3>Reputation Factors</h3>
+        <ul>
+          <li><strong>Consistency</strong> — regular participation over time</li>
+          <li><strong>Quality</strong> — peer recognition and engagement metrics</li>
+          <li><strong>Trust</strong> — community endorsements and mentorship activity</li>
+          <li><strong>Contribution</strong> — creations, content, and helpful interactions</li>
+        </ul>
+        <p>
+          Reputation unlocks progression tiers that provide access to advanced features, community
+          leadership roles, and ecosystem rewards.<a href="#footnote-1" class="footnote-ref" id="ref-2">1</a>
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Tier</th><th>Requirement</th><th>Unlock</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Newcomer</td><td>Join EchoPlex</td><td>Basic access</td></tr>
+              <tr><td>Contributor</td><td>100+ reputation points</td><td>Marketplace selling, guild creation</td></tr>
+              <tr><td>Established</td><td>500+ reputation points</td><td>Mentorship, advanced tools</td></tr>
+              <tr><td>Trusted</td><td>2000+ reputation points</td><td>Community leadership, governance</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 16 — Rewards System -->
+      <section class="doc-section" id="rewards">
+        <span class="section-number">16</span>
+        <h2 class="section-heading">
+          Rewards System
+          <button class="anchor-btn" data-anchor="rewards" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          The rewards system is designed to recognize meaningful contribution without creating perverse
+          incentives. Rewards are a byproduct of genuine participation — not the goal.
+        </p>
+        <h3>Reward Categories</h3>
+        <ul>
+          <li><strong>Activity rewards</strong> — earned through gameplay, creation, and participation</li>
+          <li><strong>Achievement rewards</strong> — milestone-based recognition</li>
+          <li><strong>Community rewards</strong> — mentorship, moderation, and helpfulness</li>
+          <li><strong>Ecosystem rewards</strong> — cross-product contributions</li>
+        </ul>
+        <div class="callout callout-warning">
+          <div class="callout-title">Anti-Gaming Design</div>
+          <div class="callout-body">
+            <p>Reward mechanisms include rate limiting, quality thresholds, and community verification to
+            prevent farming and ensure rewards reflect genuine contribution.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 17 — Future Token Framework -->
+      <section class="doc-section" id="token">
+        <span class="section-number">17</span>
+        <h2 class="section-heading">
+          Future Token Framework
+          <button class="anchor-btn" data-anchor="token" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          The ECP (EchoPlex Credit) framework is an internal unit of recognition that tracks contribution
+          across the ecosystem. It is not a cryptocurrency — it is a reputation-linked credit system that
+          may, in a future phase, serve as the foundation for a token.
+        </p>
+        <h3>ECP Framework</h3>
+        <ul>
+          <li>Earned through verified contribution, not purchased</li>
+          <li>Non-transferable between users</li>
+          <li>Linked to reputation score and progression tier</li>
+          <li>Used for ecosystem privileges and feature access</li>
+        </ul>
+        <div class="callout callout-info">
+          <div class="callout-title">Future Phase</div>
+          <div class="callout-body">
+            <p>A potential token launch is explored only after the ecosystem is self-sustaining, the
+            community is established, and regulatory clarity is obtained. No token exists today.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 18 — Business Model -->
+      <section class="doc-section" id="business-model">
+        <span class="section-number">18</span>
+        <h2 class="section-heading">
+          Business Model
+          <button class="anchor-btn" data-anchor="business-model" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          EchoPlex operates on a diversified revenue model that aligns platform success with ecosystem
+          health. Revenue is generated through ecosystem-native channels rather than advertising or data
+          sales.
+        </p>
+        <h3>Revenue Streams</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Stream</th><th>Source</th><th>Model</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Marketplace fees</td><td>Asset transactions</td><td>Small % per sale</td></tr>
+              <tr><td>Creator tools</td><td>Premium creation features</td><td>Subscription</td></tr>
+              <tr><td>Game publishing</td><td>Developer revenue share</td><td>Platform % of sales</td></tr>
+              <tr><td>TradeFusion</td><td>Transaction fees</td><td>Low % per transaction</td></tr>
+              <tr><td>Premium features</td><td>Advanced community tools</td><td>Optional subscription</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          A portion of all revenue is reinvested into the ecosystem through community rewards, creator
+          grants, and ecosystem development.
+        </p>
+      </section>
+
+      <!-- Section 19 — Roadmap -->
+      <section class="doc-section" id="roadmap">
+        <span class="section-number">19</span>
+        <h2 class="section-heading">
+          Roadmap
+          <button class="anchor-btn" data-anchor="roadmap" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          EchoPlex follows a phased roadmap — establishing strong foundations before expanding into
+          advanced capabilities. Each phase builds on the previous one.
+        </p>
+        <h3>Phase Overview</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Phase</th><th>Focus</th><th>Key Deliverables</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Phase 1</td><td>Foundation</td><td>Core platform, identity, profiles, ECP, whitepaper</td></tr>
+              <tr><td>Phase 2</td><td>Creator Ecosystem</td><td>Creator Hub, portfolios, publishing, marketplace</td></tr>
+              <tr><td>Phase 3</td><td>Stories &amp; Communities</td><td>Story Hub, guilds, events, mentorship</td></tr>
+              <tr><td>Phase 4</td><td>Marketplace</td><td>Asset marketplace, storefronts, licensing</td></tr>
+              <tr><td>Phase 5</td><td>Game Hub</td><td>Game discovery, achievements, tournaments</td></tr>
+              <tr><td>Phase 6</td><td>TradeFusion</td><td>Wallet, asset management, payments, cross-chain</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="diagram">
+          <div class="diagram-number">4</div>
+          <div class="diagram-title">Phased Roadmap Timeline</div>
+          <div class="diagram-placeholder">[ Diagram: Horizontal timeline with 6 phases ]</div>
+          <div class="diagram-caption">Figure 4 — The six-phase development roadmap</div>
+        </div>
+      </section>
+
+      <!-- Section 20 — Risk Factors -->
+      <section class="doc-section" id="risk-factors">
+        <span class="section-number">20</span>
+        <h2 class="section-heading">
+          Risk Factors
+          <button class="anchor-btn" data-anchor="risk-factors" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          Like any ambitious project, EchoPlex faces a range of risks. We believe in transparency and
+          outline the key risk categories below.
+        </p>
+        <h3>Technical Risks</h3>
+        <ul>
+          <li>Scalability challenges as the ecosystem grows</li>
+          <li>Blockchain infrastructure reliability and cost</li>
+          <li>Cross-product integration complexity</li>
+        </ul>
+        <h3>Market Risks</h3>
+        <ul>
+          <li>Adoption velocity and user acquisition</li>
+          <li>Competitive pressure from established platforms</li>
+          <li>Changing regulatory landscape for digital assets</li>
+        </ul>
+        <h3>Community Risks</h3>
+        <ul>
+          <li>Maintaining quality as the user base grows</li>
+          <li>Governance and decision-making at scale</li>
+          <li>Balancing platform control with community autonomy</li>
+        </ul>
+        <div class="callout callout-danger">
+          <div class="callout-title">Disclosure</div>
+          <div class="callout-body">
+            <p>This whitepaper is for informational purposes only and does not constitute financial advice
+            or an offer to sell securities. All forward-looking statements are subject to change.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 21 — Team & Vision -->
+      <section class="doc-section" id="team-vision">
+        <span class="section-number">21</span>
+        <h2 class="section-heading">
+          Team &amp; Vision
+          <button class="anchor-btn" data-anchor="team-vision" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          EchoPlex is being built by a team that believes digital experiences should grow together. The
+          team's background spans game development, creator platforms, community building, and blockchain
+          infrastructure.
+        </p>
+        <h3>Guiding Principles</h3>
+        <ul>
+          <li>Build products people genuinely enjoy using</li>
+          <li>Technology serves people — not the other way around</li>
+          <li>Transparency over hype</li>
+          <li>Sustainability over short-term growth</li>
+          <li>Community ownership of the ecosystem's direction</li>
+        </ul>
+        <blockquote>
+          <p>"We are not building a platform. We are building a place where digital life makes sense."</p>
+          <footer>— EchoPlex Team</footer>
+        </blockquote>
+      </section>
+
+      <!-- Section 22 — Conclusion -->
+      <section class="doc-section" id="conclusion">
+        <span class="section-number">22</span>
+        <h2 class="section-heading">
+          Conclusion
+          <button class="anchor-btn" data-anchor="conclusion" aria-label="Copy link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </h2>
+        <p>
+          EchoPlex was not created because the world needed another platform. It was created because the
+          future of digital experiences should be unified — one identity, one journey, unlimited
+          possibilities.
+        </p>
+        <p>
+          The ecosystem described in this whitepaper is ambitious. It will take time, iteration, and
+          community participation to build. But the principles are clear: entertainment first, ownership
+          second, rewards third. Contribution over popularity. Technology as invisible infrastructure.
+        </p>
+        <p>
+          We invite you to join us in building a digital world where every experience is connected, every
+          contribution is recognized, and every identity is continuous.
+        </p>
+        <div class="callout callout-success">
+          <div class="callout-title">Get Involved</div>
+          <div class="callout-body">
+            <p>This is a living document. Feedback, questions, and contributions are welcome. The
+            ecosystem will evolve with its community.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footnotes -->
+      <section class="footnotes" id="footnotes">
+        <div class="footnotes-title">Footnotes</div>
+        <ol>
+          <li id="footnote-1">Cross-product identity linkage means that actions in one product (e.g., winning a
+          tournament in Game Hub) influence reputation visible in all other products. <a href="#ref-1">↩</a></li>
+        </ol>
+      </section>
+
+      <!-- Prev / Next Navigation -->
+      <nav class="doc-nav-footer">
+        <a href="#abstract" class="doc-nav-link prev">
+          <span class="doc-nav-label">← Previous</span>
+          <span class="doc-nav-title">Abstract</span>
+        </a>
+        <a href="#abstract" class="doc-nav-link next">
+          <span class="doc-nav-label">Back to top ↑</span>
+          <span class="doc-nav-title">Table of Contents</span>
+        </a>
+      </nav>
+
+    </main>
+
+    <!-- Right Sidebar — Reading Meta -->
+    <aside class="doc-rightbar" id="rightbar">
+      <div class="rightbar-section">
+        <div class="rightbar-label">Reading Time</div>
+        <div class="reading-time" id="readingTime">~ 12 min</div>
+        <div class="reading-progress-mini">
+          <div class="reading-progress-mini-fill" id="miniProgress"></div>
+        </div>
+      </div>
+      <div class="rightbar-section">
+        <div class="rightbar-label">On This Page</div>
+        <ul class="rightbar-toc" id="rightbarToc"></ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+  </button>
+
+</body>
+</html>
