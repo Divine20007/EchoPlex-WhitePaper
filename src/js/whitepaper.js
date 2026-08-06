@@ -43,6 +43,7 @@
     'why-platforms-fall-short': { title: 'Why Existing Platforms Fall Short', desc: 'The structural gaps today' },
     'the-solution': { title: 'The Solution', desc: 'Four foundational principles' },
     ecosystem: { title: 'The EchoPlex Ecosystem', desc: 'Six interconnected products' },
+    'user-journey': { title: 'User Journey', desc: 'From newcomer to citizen' },
     'game-hub': { title: 'Game Hub', desc: 'The entertainment engine' },
     'creator-hub': { title: 'Creator Hub', desc: 'Create, publish, monetize' },
     'story-hub': { title: 'Story Hub', desc: 'Living worlds and narratives' },

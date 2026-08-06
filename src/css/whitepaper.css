@@ -968,6 +968,28 @@ button {
 .callout-danger .callout-title { color: var(--c-danger); }
 
 /* ============================================
+   ASCII Art / Diagrams
+   ============================================ */
+.ascii-art {
+  margin: var(--s-4) 0;
+  padding: var(--s-3) var(--s-4);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--c-text-secondary);
+  white-space: pre;
+  overflow-x: auto;
+  line-height: 1.6;
+  transition: background var(--t-base), border-color var(--t-base);
+}
+
+.ascii-art:hover {
+  border-color: var(--c-primary-500);
+}
+
+/* ============================================
    Tables
    ============================================ */
 .table-wrap {
