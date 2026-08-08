@@ -7,7 +7,8 @@ const fs = require('fs');
 const path = require('path');
 
 const root = __dirname;
-const whitepaperDir = path.join(root, '..', 'WhitePaper');
+// Source whitepaper text files live in ../Website/WhitePaper/
+const whitepaperDir = path.join(root, '..', 'Website', 'WhitePaper');
 
 function readWP(filename) {
   return fs.readFileSync(path.join(whitepaperDir, filename), 'utf8');
